@@ -15,31 +15,26 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return db.createTable("users",{
+  return db.createTable('roles' , {
     id:{
-      type: "int",
+      type: 'int',
       primaryKey: true,
+      autoIncrement: true,
       unsigned: true,
-      autoIncrement: true
+      notNull: true
     },
-    username:{
-      type: "string",
-      length: 50
-    },
-    email:{
-      type:"string",
-      length: 100
-    },
-    password:{
-      type:"string",
-      length: 50
-    },
-    created_date:{
-      type:"date"
+    position_role:{
+      type: 'string',
+      length: 50,
+      notNull: true
     }
   });
 };
 
-exports.down = function (db) {
-  return db.dropTable("users");
+exports.down = function(db) {
+  return null;
+};
+
+exports._meta = {
+  "version": 1
 };
