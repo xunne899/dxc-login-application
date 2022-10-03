@@ -44,3 +44,11 @@
 .langselection{
  padding-left: 88%;
 }
+
+
+.logOut{
+    border-radius: 24px;
+    padding: 6px 30px;
+    font-size: 50px;
+    background-color:#9999;
+}

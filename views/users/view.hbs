@@ -10,9 +10,10 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Name</th>
                 <th>Username</th>
                 <th>Email</th>
-                {{!-- <th>Role</th> --}}
+                <th>Role</th>
                 <th></th>
             </tr>
         </thead>
@@ -20,9 +21,10 @@
             {{#each users}}
             <tr>
                 <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
                 <td>{{this.username}}</td>
                 <td>{{this.email}}</td>
-                <td>{{this.user}}</td>
+                <td>{{this.role}}</td>
                 {{!-- <td>{{this.role}}</td> --}}
             </tr>
             {{/each}}

@@ -114,6 +114,6 @@ router.get("/profile",checkIfAuthenticated, async function (req, res) {
 router.get("/logout", (req, res) => {
   req.session.user = null;
   req.flash("success_messages", "Logout Successfully");
-  res.redirect("/login");
+  res.redirect("/");
 });
 module.exports = router;

@@ -22,19 +22,13 @@ exports.up = function (db) {
       unsigned: true, 
       autoIncrement: true 
     },
-    role_id:{                                                   
-      type: 'int',
-      unsigned: true,
-      notNull: true,
-      foreignKey: {
-        name: 'position_role_fk',
-        table: 'roles',
-        mapping: 'id',
-        rules: {
-          onDelete: 'restrict',
-          onUpdate: 'restrict'
-        },
-      }
+    role:{
+      type: "string", 
+      length: 50 
+    },
+    name: { 
+      type: "string", 
+      length: 50 
     },
     username: { 
       type: "string", 

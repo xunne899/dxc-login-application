@@ -7,6 +7,7 @@ const getHashedPassword = (password) => {
   const hash = sha256.update(password).digest("base64");
   return hash;
 };
+
 // import in User Model
 
 const { User } = require("../models");
@@ -37,22 +38,22 @@ router.post("/", async function (req, res) {
         res.redirect("/");
       } else {
         //check the password matches
-        if (user.get("password") === form.data.password && user.get("role_id") == 1 ) {
+        if (user.get("password") === form.data.password && user.get("role") === "manager" ) {
           req.session.user = {
             id: user.get("id"),
             username: user.get("username"),
             email: user.get("email"),
-            role_id:user.get("role_id")
+           
           };
           res.redirect("/users");
 
         } 
-         else if (user.get("password") === form.data.password && user.get("role_id") == 2 ) {
+         else if (user.get("password") === form.data.password && user.get("role") == "user" ) {
             req.session.user = {
               id: user.get("id"),
               username: user.get("username"),
               email: user.get("email"),
-              role_id:user.get("role_id")
+              // role_id:user.get("role_id")
             };
             res.redirect("/profile");
   

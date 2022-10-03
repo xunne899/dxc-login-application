@@ -1,4 +1,4 @@
-const { User } = require('../models')
+const { User,Role } = require('../models')
 
 
 const getAllUsers = async () => {
@@ -7,6 +7,13 @@ const getAllUsers = async () => {
     })
   
     return users
+}
+const getAllRoles = async () => {
+    const roles = await Role.fetchAll().map((role) => {
+        return [role.get('id'), role.get('role')];
+    })
+  
+    return roles
 }
 const getUserById = async (userId) => {
     return await User.where({

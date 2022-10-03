@@ -112,7 +112,7 @@ app.use(function (req, res, next) {
 // }
 
 // main()
-const { checkIfPermitted } = require("./middlewares");
+// const { checkIfPermitted } = require("./middlewares");
 const loginPage = require("./routes/login");
 const userPage = require("./routes/users");
 const profilePage = require("./routes/profile");

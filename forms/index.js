@@ -62,7 +62,38 @@ const createUserForm = () => {
     });
   };
 
+  const createRegistrationForm = () => {
+    return forms.create({
+      username: fields.string({
+        required: true,
+        errorAfterField: true,
+      }),
+      role_id: fields.number({
+        required: true,
+        errorAfterField: true,
+  
+      }),
+      email: fields.string({
+        required: true,
+        errorAfterField: true,
+        validators: [validators.email(), validators.maxlength(320)],
+  
+      }),
+      password: fields.password({
+        required: true,
+        errorAfterField: true,
+  
+      }),
+      confirm_password: fields.password({
+        required: true,
+        errorAfterField: true,
+        validators: [validators.matchField("password")],
+      }),
+    });
+  };
+
   module.exports = {
+    createRegistrationForm,
     createLoginForm,
     createUserForm,
     bootstrapField,
