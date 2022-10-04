@@ -1,11 +1,12 @@
 {{#extends 'base'}}
 
 {{#block 'content'}}
-   <div class="row mt-5" id="productTable">
+ <h1>Welcome to Staff Profile !</h1>
+   <div class="row mt-5" id="table">
    <div class=" p-3 shadow-lg rounded-5 col-12 col-md-12 col-sm-12">
    <div class="d-flex justify-content-between mt-2">
-    <h1 >Staff</h1> 
-   <a href="/users/register" class="btn btn-dark btn-sm mt-3" style="width:80px;height:30px">Register</a>
+    <h1>Staff</h1> 
+   <a href="/users/register" class="btn btn-primary btn-sm mt-3" style="width:80px;height:30px">Register</a>
 </div>
     <table class="table mt-3">
         <thead>
@@ -19,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            {{#each users}}
+            {{#each user}}
             <tr>
                 <td>{{this.id}}</td>
                   <td>{{this.name}}</td>

@@ -1,10 +1,12 @@
 {{#extends 'base'}}
 
 {{#block 'content'}}
-   <div class="row mt-5" id="productTable">
+
+    <h1>Welcome to Staff Profile !</h1>
+   <div class="row mt-5" id="table">
    <div class=" p-3 shadow-lg rounded-5 col-12 col-md-12 col-sm-12">
    <div class="d-flex justify-content-between mt-2">
-    <h1 >Staff</h1> 
+    <h1>Staff</h1> 
 </div>
     <table class="table mt-3">
         <thead>
@@ -25,7 +27,6 @@
                 <td>{{this.username}}</td>
                 <td>{{this.email}}</td>
                 <td>{{this.role}}</td>
-                {{!-- <td>{{this.role}}</td> --}}
             </tr>
             {{/each}}
         </tbody>

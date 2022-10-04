@@ -15,9 +15,9 @@ const { createRegistrationForm, createLoginForm, createUserForm, bootstrapField 
 const { checkIfAuthenticated } = require("../middlewares");
 
 router.get("/", checkIfAuthenticated, async (req, res) => {
-  const users = await User.collection().fetch();
+  const user = await User.collection().fetch();
   res.render("users/index", {
-    users: users.toJSON(),
+    user: user.toJSON(),
   });
 });
 

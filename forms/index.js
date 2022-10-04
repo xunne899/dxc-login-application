@@ -68,7 +68,7 @@ const createUserForm = () => {
         required: true,
         errorAfterField: true,
       }),
-      role_id: fields.number({
+      role: fields.string({
         required: true,
         errorAfterField: true,
   

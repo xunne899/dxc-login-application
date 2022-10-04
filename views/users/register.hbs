@@ -6,8 +6,9 @@
 <h1>Staff Registration</h1>
 <form method="POST">
     {{{form}}}
-       {{!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"/> --}}
+       <input type="hidden" name="_csrf" value="{{csrfToken}}"/>
     <input type="submit" value="Register" class="btn btn-dark mt-3"/>
+    <a href="/users" class="btn btn-dark mt-3">Back</a>
     {{/block}}
 </form>
 </div>

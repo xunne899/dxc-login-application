@@ -19,13 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap" rel="stylesheet">
     {{!-- <link rel="stylesheet" href="/style/bg-image.css"> --}}
     <title>Tech Talent</title>
-    <link rel="shortcut icon" type="image/jpg" href="" style="color:black"/>
+    <link rel="shortcut icon" type="image/jpg" href="#" style="color:black"/>
   </head>
   <body>
 
  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:white;">
   <div class="container-fluid">
-    <a class="navbar-brand ms-1" href="#">
+    <a class="navbar-brand ms-1" href="/">
       <img id="Logo"src="/images/techtalent.jpg"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -42,20 +42,19 @@
         <a class="nav-link ms-lg-2" style="font-size:large" href="/users">Users</a>
          </li> --}}
          </div>
-                   {{!-- <div class="nav-item d-flex justify-content-center align-items-center text-center ms-auto mt-sm-2 mt-lg-0">
-                    {{#if user}}
-                   <div class="d-none d-lg-inline"> Hi, {{user.username}}</div>
-                     <a class="nav-link lgBut mt-sm-3 mt-lg-0"  href="/users/logout" style="color:white; text-decoration: none;">Logout</a>
+                   <div class="nav-item d-flex justify-content-center align-items-center text-center ms-auto mt-sm-2 mt-lg-0">
+                    {{#if user}} 
+                     <a class="nav-link logOut mt-sm-3 mt-lg-0"  href="/users/logout" style="color:white; text-decoration: none;">Logout</a>
                     {{else}}
                     {{/if}}
-                    </div> --}}
+                    </div>
 </div>
      </nav>
 
        
-     {{!-- <div class="row"> --}}
-       <div class="ms-2 mt-2 langselection" id="google_translate_element"></div>
-       {{!-- </div> --}}
+     <div class="row ">
+       <div class="pe-4 mt-2 d-flex justify-content-end" id="google_translate_element"></div>
+       </div>
 <div class="container mt-4 msg" >
         {{#if success_messages }}        
             {{#each success_messages}}

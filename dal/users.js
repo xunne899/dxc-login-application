@@ -8,13 +8,13 @@ const getAllUsers = async () => {
   
     return users
 }
-const getAllRoles = async () => {
-    const roles = await Role.fetchAll().map((role) => {
-        return [role.get('id'), role.get('role')];
-    })
+// const getAllRoles = async () => {
+//     const roles = await Role.fetchAll().map((role) => {
+//         return [role.get('id'), role.get('role')];
+//     })
   
-    return roles
-}
+//     return roles
+// }
 const getUserById = async (userId) => {
     return await User.where({
         'id': parseInt(userId)
