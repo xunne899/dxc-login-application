@@ -35,13 +35,15 @@ router.post("/register", (req, res) => {
   registerForm.handle(req, {
     success: async (form) => {
       const user = new User({
+        name:form.data.name,
+        role:form.data.role,
         username: form.data.username,
         password: getHashedPassword(form.data.password),
         email: form.data.email,
       });
       await user.save();
-      req.flash("success_messages", "User signed up successfully!");
-      res.redirect("/login");
+      req.flash("success_messages", "Signed up successfully!");
+      res.redirect("/");
     },
     error: (form) => {
       res.render("users/register", {
@@ -97,19 +99,6 @@ router.post("/:user_id/delete", async (req, res) => {
 });
 
 
-
-
-router.get("/profile",checkIfAuthenticated, async function (req, res) {
-  const user = req.session.user;
-  if (!user) {
-    req.flash("error_messages", "Only logged in users may view this page");
-    res.redirect("/login");
-  } else {
-    res.render("users/profile", {
-      user: req.session.user,
-    });
-  }
-});
 
 router.get("/logout", (req, res) => {
   req.session.user = null;

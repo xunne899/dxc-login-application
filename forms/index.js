@@ -33,6 +33,11 @@ const bootstrapField = function (name, object) {
 
 const createUserForm = () => {
     return forms.create({
+      name: fields.string({
+        required: true,
+        errorAfterField: true,
+  
+      }),
       username: fields.string({
         required: true,
         errorAfterField: true,
@@ -42,6 +47,11 @@ const createUserForm = () => {
         required: true,
         errorAfterField: true,
         validators: [validators.email(), validators.maxlength(200)],
+  
+      }),
+      role: fields.string({
+        required: true,
+        errorAfterField: true,
   
       }),
     });
@@ -64,6 +74,10 @@ const createUserForm = () => {
 
   const createRegistrationForm = () => {
     return forms.create({
+      name: fields.string({
+        required: true,
+        errorAfterField: true,
+      }),
       username: fields.string({
         required: true,
         errorAfterField: true,
